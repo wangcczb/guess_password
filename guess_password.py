@@ -1,10 +1,14 @@
 password = 'a123456'
-g = 0
-while g < 3:
-	guess = input('請輸入密碼: ')
-	if guess == password:
-		print('登入成功!')
+i = 3 #剩餘機會
+while  i > 0:
+	i = i - 1
+	pwd = input('請輸入密碼: ')
+	if pwd == password:
+		print('登入成功')
 		break
-	else :
-		print('密碼錯誤! 還有', 2-g, '次機會!')
-		g = g + 1
+	else:
+		print('密碼錯誤!')
+		if i > 0:
+			print('還有', i, '次機會!')
+		else:
+			print('錯誤次數過多，帳號上鎖!')
